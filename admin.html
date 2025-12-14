@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<html>
 <head>
   <title>Admin Login</title>
 </head>
 <body>
 
 <h1>Admin Login</h1>
+<script> 
+const firebaseConfig = {
+  apiKey: "AIzaSyBiE5J-sJ-3kdrLBbm5IpjfXbEOcee3y-8",
+  authDomain: "logicgate-security.firebaseapp.com",
+  projectId: "logicgate-security",
+  storageBucket: "logicgate-security.firebasestorage.app",
+  messagingSenderId: "684131958368",
+  appId: "1:684131958368:web:05b1e51a56e3c3d0c58d05",
+  measurementId: "G-7180ZW5BVV"
+};
 
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 <input type="text" placeholder="Username"><br><br>
 <input type="password" placeholder="Password"><br><br>
 <button>Login</button>
