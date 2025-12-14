@@ -24,4 +24,29 @@ const analytics = getAnalytics(app);
 <button>Login</button>
 
 </body>
+  <h1>Admin Login</h1>
+
+  <input id="email" type="email" placeholder="Admin Email"><br><br>
+  <input id="password" type="password" placeholder="Password"><br><br>
+
+  <button onclick="login()">Login</button>
+
+  <p id="msg"></p>
+
+  <script>
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(() => {
+          window.location = "dashboard.html";
+        })
+        .catch(err => {
+          document.getElementById("msg").innerText = err.message;
+        });
+    }
+  </script>
+</body>
+
 </html>
